@@ -22,25 +22,23 @@ categories:
 
 change-template: |
   - $TITLE (#$NUMBER) by @$AUTHOR
-    {{ if .Categories.Has "feature" }} 
-      - Label: feature 
-    {{ end }}
-    {{ if .Categories.Has "bug" }} 
-      - Label: bug 
-    {{ end }}
-    {{ if .Categories.Has "enhancement" }} 
-      - Label: enhancement 
-    {{ end }}
-    {{ if .Categories.Has "documentation" }} 
-      - Label: documentation 
-    {{ end }}
-    {{ if .Categories.Has "performance" }} 
-      - Label: performance 
-    {{ end }}
-
+   
 
 
 template: |
   ## What's new here today!
 
   $CHANGES
+
+   {{ range .Categories }}
+  ### {{ .Title }}
+
+  {{ range .Changes }}
+  {{ . }}
+  {{ end }}
+  {{ end }}
+
+  ## Contributors
+  {{ range .Contributors }}
+  - @{{ . }}
+  {{ end }}
