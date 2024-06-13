@@ -8,8 +8,37 @@ categories:
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
+  - title: '🌟 Enhancements'
+    labels:
+      - 'enhancement'
+  - title: '📚 Documentation'
+    labels:
+      - 'documentation'
+  - title: '⚡ Performance'
+    labels:
+      - 'performance'
 
-change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
+
+
+change-template: |
+  - $TITLE (#$NUMBER) by @$AUTHOR
+    {{ if .Categories.Has "feature" }} 
+      - Label: feature 
+    {{ end }}
+    {{ if .Categories.Has "bug" }} 
+      - Label: bug 
+    {{ end }}
+    {{ if .Categories.Has "enhancement" }} 
+      - Label: enhancement 
+    {{ end }}
+    {{ if .Categories.Has "documentation" }} 
+      - Label: documentation 
+    {{ end }}
+    {{ if .Categories.Has "performance" }} 
+      - Label: performance 
+    {{ end }}
+
+
 
 template: |
   ## What's new here today!
