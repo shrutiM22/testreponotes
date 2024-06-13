@@ -30,15 +30,4 @@ template: |
 
   $CHANGES
 
-   {{ range .Categories }}
-  ### {{ .Title }}
-
-  {{ range .Changes }}
-  {{ . }}
-  {{ end }}
-  {{ end }}
-
-  ## Contributors
-  {{ range .Contributors }}
-  - @{{ . }}
-  {{ end }}
+  
