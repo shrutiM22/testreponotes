@@ -12,6 +12,6 @@ categories:
 change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
 
 template: |
-  ## What's new!
+  ## What's new here!
 
   $CHANGES
