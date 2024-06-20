@@ -26,7 +26,7 @@ change-template: |
 
 
 template: |
-  ## What's new here today!
+  ## What's new today!
 
   $CHANGES
 
